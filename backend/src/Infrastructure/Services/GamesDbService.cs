@@ -1,9 +1,9 @@
-﻿using GameList.Application.Common.Interfaces;
-using GameList.Application.Common.Models;
-using GameList.Domain.Entities;
+﻿using GameApp.Application.Common.Interfaces;
+using GameApp.Application.Common.Models;
+using GameApp.Domain.Entities;
 using RawgSharp;
 
-namespace GameList.Infrastructure.Services
+namespace GameApp.Infrastructure.Services
 {
     public class GamesDbService : IGamesDbService
     {

@@ -1,9 +1,9 @@
-﻿using GameList.Application.Common.Interfaces;
-using GameList.Application.Common.Models;
-using GameList.Domain.Entities;
+﻿using GameApp.Application.Common.Interfaces;
+using GameApp.Application.Common.Models;
+using GameApp.Domain.Entities;
 using MediatR;
 
-namespace GameList.Application.Games.Queries.GetGamesWithPagination
+namespace GameApp.Application.Games.Queries.GetGamesWithPagination
 {
     public sealed record GetGamesWithPaginationQuery : IRequest<PaginatedList<Game>>
     {

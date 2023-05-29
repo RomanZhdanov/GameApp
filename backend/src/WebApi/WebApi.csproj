@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyName>GameList.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>GameList.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>GameApp.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>GameApp.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <UserSecretsId>fb19cf5e-4c6b-41ad-a0aa-4ed163d9f3a7</UserSecretsId>
   </PropertyGroup>
 

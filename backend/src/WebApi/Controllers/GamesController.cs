@@ -1,10 +1,10 @@
-﻿using GameList.Application.Common.Models;
-using GameList.Application.Games.Queries.GetGameDetails;
-using GameList.Application.Games.Queries.GetGamesWithPagination;
-using GameList.Domain.Entities;
+﻿using GameApp.Application.Common.Models;
+using GameApp.Application.Games.Queries.GetGameDetails;
+using GameApp.Application.Games.Queries.GetGamesWithPagination;
+using GameApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameList.WebApi.Controllers
+namespace GameApp.WebApi.Controllers
 {
     public class GamesController : ApiControllerBase
     {

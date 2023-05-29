@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameList.WebApi.Controllers
+namespace GameApp.WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

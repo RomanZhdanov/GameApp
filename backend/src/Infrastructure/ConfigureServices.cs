@@ -1,10 +1,10 @@
-﻿using GameList.Application.Common.Interfaces;
-using GameList.Infrastructure.Services;
+﻿using GameApp.Infrastructure.Services;
+using GameApp.Application.Common.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RawgSharp;
 
-namespace GameList.Infrastructure
+namespace GameApp.Infrastructure
 {
     public static class ConfigureServices
     {

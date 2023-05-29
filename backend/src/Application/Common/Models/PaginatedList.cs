@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace GameList.Application.Common.Models
+namespace GameApp.Application.Common.Models
 {
     public class PaginatedList<T>
     {

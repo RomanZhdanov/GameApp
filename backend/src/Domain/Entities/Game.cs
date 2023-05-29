@@ -1,4 +1,4 @@
-﻿namespace GameList.Domain.Entities
+﻿namespace GameApp.Domain.Entities
 {
     public class Game
     {

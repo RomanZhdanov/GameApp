@@ -1,7 +1,7 @@
-﻿using GameList.Application.Common.Models;
-using GameList.Domain.Entities;
+﻿using GameApp.Application.Common.Models;
+using GameApp.Domain.Entities;
 
-namespace GameList.Application.Common.Interfaces
+namespace GameApp.Application.Common.Interfaces
 {
     public interface IGamesDbService
     {

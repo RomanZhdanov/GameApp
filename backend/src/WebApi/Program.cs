@@ -1,5 +1,5 @@
-using GameList.Application;
-using GameList.Infrastructure;
+using GameApp.Application;
+using GameApp.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

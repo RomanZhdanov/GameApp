@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace GameList.Application
+namespace GameApp.Application
 {
     public static class ConfigureServices
     {

@@ -1,8 +1,8 @@
-﻿using GameList.Application.Common.Interfaces;
-using GameList.Domain.Entities;
+﻿using GameApp.Application.Common.Interfaces;
+using GameApp.Domain.Entities;
 using MediatR;
 
-namespace GameList.Application.Games.Queries.GetGameDetails
+namespace GameApp.Application.Games.Queries.GetGameDetails
 {
     public sealed record GetGameDetailsQuery : IRequest<Game>
     {
