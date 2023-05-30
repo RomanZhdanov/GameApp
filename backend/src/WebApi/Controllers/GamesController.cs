@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GameApp.WebApi.Controllers;
 
-[Authorize]
 public class GamesController : ApiControllerBase
 {
     [HttpGet]
