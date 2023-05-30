@@ -1,14 +1,15 @@
-﻿using MediatR;
+﻿using GameApp.WebApi.Filters;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameApp.WebApi.Controllers
-{
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ApiControllerBase : ControllerBase
-    {
-        private ISender? _mediator;
+namespace GameApp.WebApi.Controllers;
 
-        protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
-    }
+[ApiController]
+[ApiExceptionFilter]
+[Route("api/[controller]")]
+public class ApiControllerBase : ControllerBase
+{
+    private ISender? _mediator;
+
+    protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
 }

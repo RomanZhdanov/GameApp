@@ -1,9 +1,8 @@
-﻿namespace GameApp.Domain.Entities
-{
-    public class Game
-    {
-        public int Id { get; set; }
+﻿namespace GameApp.Domain.Entities;
 
-        public string? Title { get; set; }
-    }
+public class Game
+{
+    public int Id { get; set; }
+
+    public string? Title { get; set; }
 }
