@@ -8,7 +8,7 @@ namespace GameApp.WebApi;
 
 public static class ConfigureServices
 {
-    public static IServiceCollection AddWebApiServices(this IServiceCollection services)
+    public static IServiceCollection AddWebApiServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDatabaseDeveloperPageExceptionFilter();
         
@@ -22,6 +22,15 @@ public static class ConfigureServices
         services.AddControllersWithViews(options =>
             options.Filters.Add<ApiExceptionFilterAttribute>())
                 .AddFluentValidation(x => x.AutomaticValidationEnabled = false);
+
+        services.AddCors(opt =>
+        {
+            opt.AddPolicy("frontend-origins", corsBuilder => corsBuilder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithOrigins(configuration.GetSection("CorsOrigins").Get<string[]>())
+                .AllowCredentials());
+        });
 
         services.AddRazorPages();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
