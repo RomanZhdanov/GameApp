@@ -1,14 +1,13 @@
-﻿using GameApp.Infrastructure.Services;
-using GameApp.Application.Common.Interfaces;
+﻿using GameApp.Application.Common.Interfaces;
+using GameApp.Infrastructure.Data;
+using GameApp.Infrastructure.Data.Interceptors;
+using GameApp.Infrastructure.Identity;
+using GameApp.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RawgSharp;
-using GameApp.Infrastructure.Data.Interceptors;
-using GameApp.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using GameApp.Infrastructure.Identity;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication;
 
 namespace GameApp.Infrastructure;
 
@@ -37,12 +36,9 @@ public static class ConfigureServices
         services.AddScoped<ApplicationDbContextInitialiser>();
 
         services
-            .AddDefaultIdentity<ApplicationUser>()
+            .AddIdentityCore<ApplicationUser>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
-
-        services.AddIdentityServer()
-            .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
         services.AddTransient<IDateTime, DateTimeService>();
         services.AddTransient<IIdentityService, IdentityService>();
@@ -50,8 +46,7 @@ public static class ConfigureServices
         services.AddRawgClient();
         services.AddTransient<IGamesDbService, GamesDbService>();
 
-        services.AddAuthentication()
-            .AddIdentityServerJwt();
+        services.AddAuthentication();
 
         services.AddAuthorization(options =>
             options.AddPolicy("CanPurge", policy => policy.RequireRole("Administrator")));
