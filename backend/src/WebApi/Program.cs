@@ -2,6 +2,7 @@ using GameApp.Application;
 using GameApp.Infrastructure;
 using GameApp.Infrastructure.Data;
 using GameApp.WebApi;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddWebApiServices(builder.Configuration);
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
