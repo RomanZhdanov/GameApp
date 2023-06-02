@@ -1,5 +1,16 @@
 version: "3"
 services:
+  seq:
+    image: datalust/seq
+    ports:
+      - '8080:80'
+      - '5341:5341'
+    volumes:
+      - path/to/local/storage:/data
+    enironment:
+      - ACCEPT_EULA=Y
+    networks:
+      - gameapp_net
   backend:
     build: ./backend
     ports:
