@@ -1,6 +1,7 @@
 ﻿using GameApp.Application.Common.Models;
 using GameApp.Application.Games.Queries.GetGameDetails;
 using GameApp.Application.Games.Queries.GetGamesWithPagination;
+using GameApp.Application.Games.Queries.GetGameTime;
 using GameApp.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,15 @@ public class GamesController : ApiControllerBase
         }
 
         return game;
+    }
+
+    [HttpGet("howlongtobeat")]
+    public async Task<ActionResult<string>> GetGameTime(string gameName)
+    {
+        return await Mediator.Send(new GetGameTimeQuery
+        {
+            GameName = gameName
+        });
     }
 
     [HttpGet("search")]
